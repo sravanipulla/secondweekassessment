@@ -1,0 +1,112 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.StringTokenizer;
+class Showroom {
+int id;
+ArrayList<Car> cars;
+
+
+public int getId() {
+	return id;
+}
+
+public void setId(int id) {
+	this.id = id;
+}
+
+public ArrayList<Car> getCars() {
+	return cars;
+}
+
+public void setCars(ArrayList<Car> cars) {
+	this.cars = cars;
+}
+
+public Showroom(int id, ArrayList<Car> cars) {
+	super();
+	this.id = id;
+	this.cars = cars;
+}
+
+
+
+
+}
+
+class Car {
+
+String name;
+String color;
+int modelno;
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getColor() {
+	return color;
+}
+public void setColor(String color) {
+	this.color = color;
+}
+public int getModelno() {
+	return modelno;
+}
+public void setModelno(int modelno) {
+	this.modelno = modelno;
+}
+public Car(String name, String color, int modelno) {
+	super();
+	this.name = name;
+	this.color = color;
+	this.modelno = modelno;
+}
+
+
+}
+
+
+
+public class Tdayassessment {
+	 void reverse(String data){
+
+			StringTokenizer tokenizer = new StringTokenizer(data, " ");
+			do {
+				String str=tokenizer.nextToken()+" ";
+			     char []arr=str.toCharArray();
+			     for(int j=(arr.length-1);j>=0;j--){
+					  System.out.print(arr[j]);
+					   }
+			}while (tokenizer.hasMoreTokens());
+				 
+		}	
+
+	
+	   public static void main(String[] args) {
+			
+			 Tdayassessment t=new Tdayassessment();
+			 t.reverse("this is a java");
+			 System.out.println();
+			 Car ad1=new Car("audi","black",123);
+			 Car ad2=new Car("honda","white",234);
+             ArrayList<Car> cars=new ArrayList<>();
+			 cars.add(ad1);
+			 cars.add(ad2);
+			 Showroom s1=new Showroom('1',cars);
+			 HashMap<Integer,ArrayList<Car>> hashmap=new HashMap();
+			 hashmap.put(s1.getId(),cars);
+			 ArrayList<Car> ca=hashmap.get(1);
+			 s1.setCars(cars);
+	         ArrayList <Car> ca1 =s1.getCars();
+	         for(Car c:ca1){
+	        	 System.out.println(c.getName()+" "+c.getColor()+" "+c.getModelno());
+			 
+	         }
+	         
+			 
+			 
+		
+	   }
+	
+	}
